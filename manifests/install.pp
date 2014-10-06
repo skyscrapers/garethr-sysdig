@@ -7,12 +7,12 @@ class sysdig::install {
 
       include apt
       apt::source { 'sysdig':
-        location          => 'http://download.draios.com/stable/deb',
-        release           => 'stable-$(ARCH)/',
-        repos             => '',
+        location          => 'http://skypackages.s3-website-eu-west-1.amazonaws.com/ubuntu/',
+        release           => 'sysdig-prod',
+        repos             => 'main',
         required_packages => 'debian-keyring debian-archive-keyring',
-        key               => 'EC51E8C4',
-        key_source        => 'https://s3.amazonaws.com/download.draios.com/DRAIOS-GPG-KEY.public',
+        key               => '1BC1B9EF',
+        key_source        => 'http://skypackages.s3-website-eu-west-1.amazonaws.com/gpg.key',
         include_src       => false,
       }
 
